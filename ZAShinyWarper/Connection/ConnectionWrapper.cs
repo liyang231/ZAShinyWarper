@@ -17,12 +17,12 @@ public class ConnectionWrapper(SwitchConnectionConfig Config)
     private bool IsConnected { get; set; }
     private readonly bool CRLF = Config.Protocol is SwitchProtocol.WiFi;
 
-    private readonly long[] jumpsPos = [0x47D21A0, 0x248, 0x00, 0x138, 0x90];
-    private readonly long[] weatherPointer = [0x612AC30, 0xB0, 0x28, 0x00];
-    private readonly long[] timePointer = [0x40F9500, 0x20, 0x40, 0x30];
-    private readonly long[] basePointer = [0x40F9500, 0xB8, 0x00];
-    private readonly long[] arrayStartPointer = [0x40F9500, 0xB8, 0x378, 0x00];
-    private readonly long[] invalidStartPointer = [0x40F9500, 0xB8, 0x380, 0x00];
+    private readonly long[] jumpsPos = [0x47D71A0, 0x248, 0x00, 0x138, 0x90];
+    private readonly long[] weatherPointer = [0x612FC30, 0xB0, 0x28, 0x00];
+    private readonly long[] timePointer = [0x40FE500, 0x20, 0x40, 0x30];
+    private readonly long[] basePointer = [0x40FE500, 0xB8, 0x00];
+    private readonly long[] arrayStartPointer = [0x40FE500, 0xB8, 0x378, 0x00];
+    private readonly long[] invalidStartPointer = [0x40FE500, 0xB8, 0x380, 0x00];
 
     private readonly SemaphoreSlim _connectionLock = new(1, 1);
 
